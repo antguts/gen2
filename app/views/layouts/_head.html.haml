@@ -1,0 +1,58 @@
+%head
+  %meta{charset: "utf-8"}
+  -# %link{rel: "dns-prefetch", href: "//fonts.googleapis.com"}
+  -# %link{rel: "dns-prefetch", href: "//use.typekit.com"}
+  %meta{"http-equiv" => "x-ua-compatible", content: "ie=edge"}
+  -# https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#x-ua-compatible
+  -# Can setup in application.rb as follows:
+  -# http://chriszetter.com/blog/2013/10/04/setting-headers-in-rails-4/
+  -# config.action_dispatch.default_headers.merge!('X-UA-Compatible' => 'IE=edge')
+
+  %title= content_for?(:title) ? yield(:title) : "Generations Hair Salon"
+
+  - if content_for?(:description_tag)
+    %meta{name: "description",       content: yield(:description_tag).strip}
+  - else
+    %meta{name: "description",       content: "Generations Hair Salon. A hair salon in Wellington that has the following services: Hair color, Hair Correction, Highlights, Lowlights, balayage, Partial Color, Corrective Color, Hair Cut, Hair Styles. Owned by Anthony Gutilla and located in Wellington, FL."}
+
+  %meta{property: "og:locale",       content: "en_US"}
+  %meta{property: "og:type",         content: "website"}
+  %meta{property: "og:url",          content: ""}
+  %meta{property: "og:site_name",    content: "Generations Hair Salon"}
+  %meta{property: "og:title",        content: "Generations Hair Salon"}
+  %meta{property: "og:description",  content: "Generations Hair Salon. A hair salon in Wellington that has the following services: Hair color, Hair Correction, Highlights, Lowlights, balayage, Partial Color, Corrective Color, Hair Cut, Hair Styles. Owned by Anthony Gutilla and located in Wellington, FL."}
+  %meta{property: "fb:admins",       content: "<name@domain.com>"}
+  %meta{property: "og:image",        content: "<location_url>"}
+
+  %meta{name: "twitter:card",        content: "Primary Code is for people who want to learn how to code."}
+  %meta{name: "twitter:site",        content: "@<twitter_account>"}
+  %meta{name: "twitter:url",         content: ""}
+  %meta{name: "twitter:title",       content: "Generations Hair Salon"}
+  %meta{name: "twitter:description", content: "Generations Hair Salon. A hair salon in Wellington that has the following services: Hair color, Hair Correction, Highlights, Lowlights, balayage, Partial Color, Corrective Color, Hair Cut, Hair Styles. Owned by Anthony Gutilla and located in Wellington, FL."}
+  %meta{name: "twitter:image",       content: "<location_url>"}
+  %meta{name: "twitter:creator",     content: "@<twitter_account>"}
+
+  %meta{itemprop: "name",            content: "Generations Hair Salon"}
+  %meta{itemprop: "url",             content: ""}
+  %meta{itemprop: "description",     content: "Generations Hair Salon. A hair salon in Wellington that has the following services: Hair color, Hair Correction, Highlights, Lowlights, balayage, Partial Color, Corrective Color, Hair Cut, Hair Styles. Owned by Anthony Gutilla and located in Wellington, FL."}
+
+  -# %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+  -# https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW26
+
+  = favicon_link_tag '/favicon.ico'
+  = favicon_link_tag '/apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png'
+
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  -# for production customize modernizr at: http://www.modernizr.com/download/
+  = javascript_include_tag 'modernizr-2.8.3.min'
+
+  -# Google Web Fonts combination idea. Delete if you do not use.
+  %link{href: "http://fonts.googleapis.com/css?family=Droid+Serif", rel: "stylesheet", type: "text/css"}
+  %link{href: "http://fonts.googleapis.com/css?family=Droid+Sans", rel: "stylesheet", type: "text/css"}
+
+  -# Typekit script. Delete if you do not use.
+  -# %script{src: '//use.typekit.net/XXX.js', type: 'text/javascript'}
+  -# :javascript
+  -#   try{Typekit.load();}catch(e){}
+
+  = csrf_meta_tags

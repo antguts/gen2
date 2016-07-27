@@ -1,0 +1,144 @@
+@viewport
+  width: device-width
+
+@-ms-viewport
+  width: device-width
+
+
+/* Base
+  ----------------------- */
+
+html
+  line-height: $base-line-height-alt
+  font-family: $base-font-family
+  font-size: $base-font-size-alt
+  color: $base-font-color
+  /* This may cause problems in Firefox when combined with JS plugins (like modals or drag-and-drop UIs) that rely on viewport dimension calculations */
+  overflow-y: scroll
+  -webkit-font-smoothing: antialiased
+
+body
+  background-color: $bg-body
+
+.container
+  +container()
+  +show-grid(12)
+  background-color: $white
+
+  +breakpoint($g-uber-wide)
+    max-width: 1440px
+
+$internal-padding: 20px
+
+
+/* Media
+  ----------------------- */
+
+audio,
+canvas,
+img,
+svg,
+video
+  vertical-align: middle
+
+img
+  max-width: 100%
+
+
+/* Header
+  ----------------------- */
+
+// navigation in _navigation.sass
+
+header
+  margin-bottom: 15px
+  @extend .green
+  .container
+    @extend .green
+    @extend .white-text
+
+.logo
+  +span(3 of 12)
+  a
+    display: block
+    width: 150px
+    height: 26px
+    margin: 0 0 0 10px
+    background: image-url("logos/logo1.jpg") 0 0 no-repeat
+
+    +breakpoint($g-layout)
+      margin-left: 5px
+
+  +breakpoint($g-tablet)
+    +span(4 of 12)
+    a
+      width: 300px
+      height: 51px
+      background: image-url("logos/logo1.jpg") 0 0 no-repeat
+
+.hero
+  margin-bottom: 20px
+
+
+
+/* Footer
+  ----------------------- */
+
+.footer
+  height: 91px
+  bottom: 0
+  right: 0
+  left: 0
+  z-index: 200
+  section
+    padding: 20px
+  p
+    clear: both
+    margin: 0
+  .container
+    @extend .white-text
+    background-color: $dark-gray
+    ul
+      list-style-type: none
+      padding: 0 10px 0
+      a
+        border: 1px solid $dark-gray
+      a:hover
+        text-decoration: none
+        border-radius: 5px
+        background-color: $cyan
+    section
+      padding-top: 0
+
+  .footer-left
+    text-align: center
+    li
+      margin-right: 10px
+      display: inline-block
+
+  .footer-right
+    +hide
+    &:nth-child(1)
+      +span(2 of 6)
+    &:nth-child(2)
+      +span(2 of 6)
+    &:nth-child(3)
+      +span(2 of 6 last)
+
+  +breakpoint($g-tablet)
+    .footer-left
+      +span(6 of 12)
+    .footer-right
+      +reveal-hidden-inline
+      +span(6 of 12 last)
+    .col1
+      +span(3 of 6)
+    .col2
+      +span(3 of 6 last)
+
+
+
+
+
+
+

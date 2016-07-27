@@ -1,0 +1,102 @@
+- content_for :title do
+  Services
+= nav_at 'Services'
+
+.services
+  .container
+    %section.hero
+      // offeset by one to comensate for .utility overlay.
+      %ul
+        %li
+          .cuts
+            %a{href: '#1', class: "hoverable t-link"} Hair Cuts
+        %li
+          .style
+            %a{href: '#2', class: "hoverable t-link"} Hair Styling
+        %li
+          .color
+            %a{href: '#3', class: "hoverable t-link"} Color Services
+        %li
+          .nail
+            %a{href: '#4', class: "hoverable t-link"} Nail Services
+        %li
+          .other
+            %a{href: '#5', class: "hoverable t-link"} Other
+
+
+
+
+
+
+
+
+
+  .container
+    .service-block
+      %h3#1 Hair Cuts:
+      .service
+        %p Bang Trim
+        %p Childs Cut
+        %p Childs Cut/blow (up to 12yrs)
+        %p Gentlemen's Design Cut & Style
+        %p Womens Haircut
+        %p Womens Cut & Style
+      .price
+        %p $10
+        %p $20
+        %p $30
+        %p $35
+        %p $50
+        %p $65
+
+    .service-block
+      %h3#2 Hair Styling:
+      .service
+        %p Up-do
+        %p Shampoo & Blow Dry
+        %p Keratin Treatment
+        %p Deep Conditioning Treatment
+        %p Hair extensions
+        %p Perm
+        %p Keratin Conditioning Treatment
+      .price
+        %p $85*
+        %p $45
+        %p  *
+        %p $30
+        %p  *
+        %p $100
+        %p $35
+
+    .service-block
+      %h3#3 Color Services:
+      .service
+        %p
+        %p
+        %p
+      .price
+        %p
+        %p
+        %p
+
+    .service-block
+      %h3#4 Nail Services
+      .service
+        %p
+        %p
+        %p
+      .price
+        %p
+        %p
+        %p
+
+    .service-block
+      %h3#5 Other
+      .service
+        %p
+        %p
+        %p
+      .price
+        %p
+        %p
+        %p
